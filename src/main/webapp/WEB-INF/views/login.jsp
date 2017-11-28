@@ -7,6 +7,23 @@
 <title>用户登录</title>
 </head>
 <body>
+<form action="">
+<table>
+<tr>
+<td>用户名:</td>
+<td><input type="text" maxlength="20" name="ueseName"></td>
+</tr>
+<tr>
+<td>密码:</td>
+<td><input type="password" maxlength="20" name="uesePassword"></td>
+</tr>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><input type="submit" value="登录"></td>
+</tr>
 
+</table>
+</form>
 </body>
 </html>

@@ -96,6 +96,8 @@ public class HttpUtil {
             HttpURLConnection httpURLConnection = (HttpURLConnection)connection;
             if(null != requestMethod && "POST".equalsIgnoreCase(requestMethod)){
             	httpURLConnection.setRequestMethod("POST");
+            }else{
+            	httpURLConnection.setRequestMethod("GET");
             }
             // 设置通用的请求属性
             httpURLConnection.setRequestProperty("accept", "*/*");
