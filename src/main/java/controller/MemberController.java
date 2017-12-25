@@ -27,7 +27,7 @@ public class MemberController {
 	
 	@RequestMapping(value="/save")
 	@ResponseBody
-	public String save(Member member,@RequestParam("code") String code){
+	public String save(Member member,@RequestParam("code") String code,@RequestParam("phone") String phone){
 		String url="https://api.weixin.qq.com/sns/jscode2session";//appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
 		try {
 			Map<String, String> dataMap=new HashMap<>();
@@ -41,6 +41,7 @@ public class MemberController {
 			String result=HttpUtil.strClient(HttpUtil.urlDataMapToStr(dataMap, url), "Get");
 			Map<String, Object> map=JSON.parseObject(result);
 			member.setOpenid(map.get("openid").toString());
+			member.setPhone(phone);
 			memberService.save(member);
 			return "新增用户成功";
 		} catch (Exception e) {

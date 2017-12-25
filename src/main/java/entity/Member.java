@@ -19,6 +19,7 @@ public class Member {
 	private String nickName;
 	private String province;
 	private String openid;
+	private String phone;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -75,6 +76,12 @@ public class Member {
 	}
 	public void setOpenid(String openid) {
 		this.openid = openid;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	
 }
